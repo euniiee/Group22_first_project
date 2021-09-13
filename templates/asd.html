@@ -7,20 +7,48 @@
     <title>Document</title>
 
     <style>
+        body{
+            margin: 0 0 0 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        li {
+            list-style: none;
+        }
+        .logoImg{
+            width: 200px;
+        }
         .top{
+            display: flex;
+            margin: 0 0 0 0;
             background-color: white;
             height: 60px;
         }
+        .member_box{
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+        }
+        .member_box li:nth-child(even) {
+            margin-left: 40px;
+        }
         .container{
+            
+            display: flex;
             margin: auto;
             width: 1170px;
             height: 60px;
-            background-color: wheat;
         }
         .logo {
             display: flex;
             align-items: center;
-            background-color: blue;
+            background-color: #8CACFA;
             height: 70px;
             margin: auto;
             justify-content: space-between;
@@ -35,7 +63,7 @@
             color: white;
         }
         .text{
-            width: 1170px;
+            /* width: 1170px; */
             color: white;
         }
         .content{
@@ -50,19 +78,30 @@
             width: 1100px;
             height: 800px;
             /* height: 800px; */
-            margin: 20px auto 20px auto;
+            margin: auto;
 
         }
     </style>
 </head>
 <body>
     <nav class="top">
-        <div class="container">여긴 로고</div>
+        
+        
+    <div class="container"><img src ="../static/자산.svg" class="logoImg">
+        <div class="member_box">   
+            <li><a class="signin">로그인</a></li>
+            <li><a class="signup">회원가입 </a></li>
+        </div>
+    </div>    
+        
+        
     </nav>
     <div class="logo">
         
-        <div class="logoContainer">베스트셀러 / 스테디셀러</div>
-        <div class="text">즐겨찾기</div>
+        <div class="logoContainer">베스트셀러 / 스테디셀러
+            <div class="text">즐겨찾기</div>
+        </div>
+        
 
     </div>
     <div class="content">
