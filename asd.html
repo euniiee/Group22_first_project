@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/9373a70b51.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
 
     <style>
-        .top{
+        .top {
             background-color: white;
             height: 60px;
         }
-        .container{
+
+        .container {
             margin: auto;
             width: 1170px;
             height: 60px;
             background-color: wheat;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -25,6 +37,7 @@
             margin: auto;
             justify-content: space-between;
         }
+
         .logoContainer {
             width: 1170px;
             margin: auto;
@@ -34,41 +47,162 @@
             font-size: 24px;
             color: white;
         }
-        .text{
+
+        .text {
             width: 1170px;
             color: white;
         }
-        .content{
+
+        .content {
             width: 1170px;
             margin: auto;
             background-color: wheat;
             height: 800px;
         }
-        .content2{
+
+        .container {
             display: grid;
             background-color: white;
             width: 1100px;
             height: 800px;
             /* height: 800px; */
             margin: 20px auto 20px auto;
-
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 35px;
+            column-gap: 30px;
+            justify-content: stretch;
+            place-content: space-between center;
         }
+
+        .card {
+            width: 300px;
+            height: 470px;
+            margin: auto auto auto 20px;
+        }
+
+        .card-img-top {
+            width: 220px;
+            height: 350px;
+            margin: 20px auto 0 auto;
+        }
+
+        .card-body {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .btn-primary {
+            width: 100px;
+            margin: auto;
+        }
+
+
+
     </style>
 </head>
 <body>
-    <nav class="top">
-        <div class="container">여긴 로고</div>
-    </nav>
-    <div class="logo">
-        
-        <div class="logoContainer">베스트셀러 / 스테디셀러</div>
-        <div class="text">즐겨찾기</div>
+<nav class="top">
+    <div class="container">여긴 로고</div>
+</nav>
+<div class="logo">
 
-    </div>
-    <div class="content">
-        <div class="content2">
-            asd
+    <div class="logoContainer">베스트셀러 / 스테디셀러</div>
+    <div class="text">즐겨찾기</div>
+
+</div>
+<div class="content">
+    <div class="container">
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </body>
 </html>
