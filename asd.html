@@ -17,54 +17,28 @@
     <title>Document</title>
 
     <style>
-        body{
-            margin: 0 0 0 0;
-        }
-        a {
-            text-decoration: none;
-        }
-        a:hover{
-            cursor: pointer;
-        }
-        li {
-            list-style: none;
-        }
-        .logoImg{
-            width: 200px;
-        }
-        .top{
-            display: flex;
-            margin: 0 0 0 0;
+        .top {
             background-color: white;
-            margin: center;
-        }
-        .member_box{
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            
-        }
-        .member_box li:nth-child(even) {
-            margin-left: 40px;
-        }
-        .container{
-            
-            display: flex;
-            margin: auto;
-            width: 100%;
             height: 60px;
         }
-        .book {
-            width: 100%;
+
+        .container {
+            margin: auto;
+            width: 1170px;
+            height: 60px;
+            background-color: wheat;
+        }
+
+        .logo {
             display: flex;
             align-items: center;
-            background-color: #8CACFA;
+            background-color: blue;
             height: 70px;
             margin: auto;
             justify-content: space-between;
         }
-        .seller {
+
+        .logoContainer {
             width: 1170px;
             margin: auto;
             height: 70px;
@@ -73,37 +47,17 @@
             font-size: 24px;
             color: white;
         }
-        .favorite{
-            color: white;
-            margin-right: 10px;
-        }
-        .list{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background-color:yellowgreen;
-            height: 40px;
-            margin:auto;
-        }
-        .list-seller{
-            width: 500px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            font-size: 15px;
+
+        .text {
+            width: 1170px;
             color: white;
         }
-        .steady-seller{
-            width: 250px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            font-size: 15px;
-            color: white;
-            margin: 0;
-        }
-        .best-seller1 {
-            margin: auto 25px ;
+
+        .content {
+            width: 1170px;
+            margin: auto;
+            background-color: wheat;
+            height: 800px;
         }
 
         .content2 {
@@ -120,57 +74,43 @@
             place-content: space-between center;
         }
 
-        .best-seller2 {
-            margin: auto 25px;
+        .card {
+            width: 300px;
+            height: 470px;
+            margin: auto auto auto 20px;
         }
 
-        .best-seller3 {
-            margin: auto 25px;
+        .card-img-top {
+            width: 220px;
+            height: 350px;
+            margin: 20px auto 0 auto;
         }
 
-        /*.content2{*/
-        /*    display: grid;*/
-        /*    background-color: white;*/
-        /*    width: 1100px;*/
-        /*    height: 800px;*/
-        /*    !* height: 800px; *!*/
-        /*    margin: 20px auto 20px auto;*/
+        .card-body {
+            width: 300px;
+            margin: 0 auto;
+        }
 
-        /*}*/
+        .btn-primary {
+            width: 100px;
+            margin: auto;
+        }
+
+
+
     </style>
 </head>
 <body>
-    <nav class="top">
-        
-        
-    <div class="container"><img src ="../static/자산.svg" class="logoImg">
-        <div class="member_box">   
-            <li><a class="signin">로그인</a></li>
-            <li><a class="signup">회원가입 </a></li>
-        </div>
-    </div>    
-        
-        
-    </nav>
-  
-    <nav>
-        <div class="book">
-            <div class="seller">베스트 셀러 | 스테디 셀러</div>
-            <div class="favorite">나의 관심 목록</div>
-        </div>
-    </nav>
+<nav class="top">
+    <div class="container">여긴 로고</div>
+</nav>
+<div class="logo">
 
-   <nav class="list">
-       <div class="list-seller">
-           <span class="best-seller1">주간</span>
-           <span>|</span>
-           <span class="best-seller2">월간</span>
-           <span>|</span>
-           <span class="best-seller3">연간</span>
-           <span class="steady-seller">국내도서</span>
-       </div>
-   </nav>
-    <div class="content">
+    <div class="logoContainer">베스트셀러 / 스테디셀러</div>
+    <div class="text">즐겨찾기</div>
+
+</div>
+<div class="content">
     <div class="content2">
         <div class="card">
             <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
