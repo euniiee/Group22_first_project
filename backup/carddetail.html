@@ -1,31 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/9373a70b51.js" crossorigin="anonymous"></script>
+
     <!-- 구글폰트 -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
+
+    <title>Document</title>
 
     <style>
+        body{
+            margin: 0 0 0 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        li {
+            list-style: none;
+        }
+        .logoImg{
+            width: 200px;
+        }
+        .top{
+            display: flex;
+            margin: 0 0 0 0;
+            background-color: white;
+            margin: center;
+        }
+        .member_box{
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+        .member_box li:nth-child(even) {
+            margin-left: 40px;
+        }
+        .container{
+
+            display: flex;
+            margin: auto;
+            width: 100%;
+            height: 60px;
+        }
+        .book {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: #8CACFA;
+            height: 70px;
+            margin: auto;
+            justify-content: space-between;
+        }
+        .seller {
+            width: 1170px;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+        .favorite{
+            color: white;
+            margin-right: 10px;
+        }
+        .list{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color:yellowgreen;
+            height: 40px;
+            margin:auto;
+        }
+        .list-seller{
+            width: 500px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: white;
+        }
+        .steady-seller{
+            width: 250px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: white;
+            margin: 0;
+        }
+        .best-seller1 {
+            margin: auto 25px ;
+        }
+
+        .content2 {
+            display: grid;
+            background-color: white;
+            width: 1100px;
+            height: 800px;
+            /* height: 800px; */
+            margin: 20px auto 20px auto;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 35px;
+            column-gap: 30px;
+            justify-content: stretch;
+            place-content: space-between center;
+        }
+
+        /*<----여기서부터 btn-primary까지 최종적으로 추가한 카드 관련 css입니당---->*/
+
+        .card {
+            width: 300px;
+            height: 470px;
+            margin: auto auto auto 20px;
+        }
+
+        .card-img-top {
+            width: 220px;
+            height: 350px;
+            margin: 20px auto 0 auto;
+        }
+
+        .card-body {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .btn-primary {
+            width: 100px;
+            margin: auto;
+        }
+
+        .best-seller2 {
+            margin: auto 25px;
+        }
+
+        .best-seller3 {
+            margin: auto 25px;
+        }
+
+        /*.content2{*/
+        /*    display: grid;*/
+        /*    background-color: white;*/
+        /*    width: 1100px;*/
+        /*    height: 800px;*/
+        /*    !* height: 800px; *!*/
+        /*    margin: 20px auto 20px auto;*/
+
+        /*}*/
+
         .modal_button{
             text-align: center;
             vertical-align: middle;
         }
         .modal{
-            position:absolute;
+            z-index: 9999;
+            position:fixed;
             width:100%;
             height:100%;
             background: rgba(0,0,0,0.8);
@@ -89,9 +244,9 @@
         }
 
     </style>
-    <script>
+    <script>/*상세보기 모달 관련*/
         $(function(){
-            $("button").click(
+            $(".card-img-top").click(
                 function() {
                     $(".modal").fadeIn();
                 });
@@ -100,12 +255,133 @@
                     $(".modal").fadeOut();
                 });
             });
+
     </script>
 </head>
 <body>
+    <nav class="top">
 
-<button class="modal_button">모달창</button>
 
+    <div class="container"><img src ="../static/자산.svg" class="logoImg">
+        <div class="member_box">
+            <li><a class="signin">로그인</a></li>
+            <li><a class="signup">회원가입 </a></li>
+        </div>
+    </div>
+
+    </nav>
+
+    <nav>
+        <div class="book">
+            <div class="seller">베스트 셀러 | 스테디 셀러</div>
+            <div class="favorite">나의 관심 목록</div>
+        </div>
+    </nav>
+
+   <nav class="list">
+       <div class="list-seller">
+           <span class="best-seller1">주간</span>
+           <span>|</span>
+           <span class="best-seller2">월간</span>
+           <span>|</span>
+           <span class="best-seller3">연간</span>
+           <span class="steady-seller">국내도서</span>
+       </div>
+   </nav>
+    <div class="content">
+    <div class="content2">
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="http://image.kyobobook.co.kr/images/book/large/729/l9791165343729.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">달러구트의 꿈 백화점2</h5>
+                <div class="btns" style="text-align: center">
+                    <a href="#" class="btn btn-primary"><i class="far fa-heart" style="user-select: auto;"></i></a>
+                    <a href="#" class="btn btn-primary">보러가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 상세이미지 클릭시 모달 -->
 <div class="modal">
     <div class="modal_content" title="클릭하면 창이 닫힙니다.">
         <div class="book_image">
@@ -118,9 +394,8 @@
             여기에는 글자를 마구마구 넣을거에요???? 여기에는 글자를 마구마구 넣을거에요???? 여기에는 글자를 마구마구 넣을거에요???? 여기에는 글자를 마구마구 넣을거에요???? 여기에는 글자를 마구마구 넣을거에요???? 여기에는 글자를 마구마구 넣을거에요????
         </div>
     </div>
-
 </div>
 
-
+</div>
 </body>
 </html>
