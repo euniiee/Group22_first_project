@@ -8,3 +8,14 @@ $(function(){
             $(".modal").fadeOut();
         });
     });
+
+$(function(){
+    $(".signup").click(
+        function() {
+            $(".join").fadeIn();
+        });
+    $(".modal_content2").click(
+        function() {
+            $(".join").fadeOut();
+        });
+    });
