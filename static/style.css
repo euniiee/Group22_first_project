@@ -214,17 +214,18 @@ li {
     left:0;
     display:none;
 }
-.modal_content2{
-    width:800px; height:600px;
+.modal_content2 {
+    width: 800px;
+    height: 600px;
     border: solid 4px #6485F5;
-    background:#fff;
-    border-radius:10px;
-    position:relative;
-    top:28%;
-    left:38%;
-    margin-top:-100px;
-    margin-left:-200px;
-    box-sizing:border-box;
-    padding:74px 0;
-    cursor:pointer;
-
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    top: 28%;
+    left: 38%;
+    margin-top: -100px;
+    margin-left: -200px;
+    box-sizing: border-box;
+    padding: 74px 0;
+    cursor: pointer;
+}
