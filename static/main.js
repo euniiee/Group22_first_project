@@ -8,6 +8,7 @@ $(function(){
             $(".modal").fadeOut();
         });
     });
+
 $(function(){
     $(".signup").click(
         function() {

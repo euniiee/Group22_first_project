@@ -203,6 +203,7 @@ li {
     box-sizing:border-box;
     cursor:pointer;
 }
+
 .join{
     z-index: 9999;
     position:fixed;
@@ -226,4 +227,4 @@ li {
     box-sizing:border-box;
     padding:74px 0;
     cursor:pointer;
-}
+
