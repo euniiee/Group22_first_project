@@ -203,7 +203,6 @@ li {
     box-sizing:border-box;
     cursor:pointer;
 }
-/* 회원가입 모달창 */
 
 .join{
     z-index: 9999;
@@ -228,5 +227,4 @@ li {
     box-sizing:border-box;
     padding:74px 0;
     cursor:pointer;
-}
 
