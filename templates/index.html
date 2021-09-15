@@ -25,32 +25,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap"
           rel="stylesheet">
-<<<<<<< Updated upstream
-    <!-- <script src="../static/main.js"></script> -->
+<!-- <script src="../static/main.js"></script> -->
     <script defer src="../static/main.js"></script>
     <title>Document</title>
-
-=======
     <script src="../static/main.js"></script>
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
->>>>>>> Stashed changes
 </head>
 <body>
 <nav class="top">
     <div class="topChild"><img src="../static/img/logo.svg" class="logoImg">
         <div class="member_box">
-            <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;">로그인</li>
-            <li><a class="signup">회원가입</a></li>
+            <li onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a>로그인</a></li>
+            <li onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><a>회원가입</a></li>
         </div>
     </div>
 </nav>
@@ -71,8 +56,6 @@
             </div>
         </nav>
     </div>
-
-
 <div class="content">
     <div class="content2">
         <div class="card">
@@ -241,25 +224,41 @@
     <!--            </form>-->
     <!--        </div>-->
     <!--    </div>&lt;!&ndash; 로그인 모달창 끝 &ndash;&gt;-->
+    <!--모달 로그인-->
     <div id="id01" class="modal">
         <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
             <div class="container">
-                <label for="uname"><b>아이디</b></label>
-                <input type="text" style="margin-bottom: 20px;" placeholder="Enter Username" name="uname" required>
-                <label for="psw"><b>비밀번호</b></label>
-                <input type="password" style="margin-bottom: 20px;" placeholder="Enter Password" name="psw" required>
+                <label><b>아이디</b></label>
+                <input type="text" placeholder="아이디를 입력해주세요" name="uname" required>
+                <p class="validation_id" style="margin-bottom: 20px;">등록되지 않은 아이디입니다.</p>
+                <label><b>비밀번호</b></label>
+                <input type="password" placeholder="비밀번호를 입력해주세요" name="psw" required>
+                <p class="validation_pw" style="margin-bottom: 20px;">비밀번호가 올바르지 않습니다.</p>
                 <button type="submit">로그인</button>
             </div>
-<!--            <div class="container" style="background-color:#f1f1f1; height:40px;">-->
-<!--                <button type="button" style="align:center;" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">-->
-<!--                    Cancel-->
-<!--                </button>-->
-<!--            </div>-->
         </form>
-    </div>
+    </div><!--모달 로그인-->
+    <!--모달 회원가입-->
+    <div id="id02" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <label><b>아이디</b></label>
+                <input type="text" placeholder="가입하실 아이디를 입력해주세요" name="uname" required>
+                <p class="validation_id" style="margin-bottom: 20px;">이미 사용중이 아이디입니다.</p>
+                <label><b>비밀번호</b></label>
+                <input type="password" placeholder="비밀번호를 입력해주세요 (영문숫자 조합 8자리이상)" name="psw" required>
+                <input type="password" placeholder="비밀번호를 재확인 해주세요" name="psw" required>
+                <p class="validation_pw" style="margin-bottom: 20px;">비밀번호가 일치하지 않습니다.</p>
+                <button type="submit">가입하기</button>
+            </div>
+        </form>
+    </div><!--모달 회원가입-->
 
 </div>
 </div>
