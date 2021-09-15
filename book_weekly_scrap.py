@@ -15,7 +15,8 @@ db = client.team22db
 # 구매 사이트
 
 #크롬창 열기 구글드라이브 다운받은 파일 있는곳으로 놔야함
-driver = webdriver.Chrome('C:/Users/thdgu/Desktop/chromedriver_win32/chromedriver.exe')
+client = MongoClient('localhost', 27017)
+db = client.team22db
 
 #크롬창 열기
 driver = webdriver.Chrome('C:/users/HANSUNG/desktop/chromedriver.exe')
