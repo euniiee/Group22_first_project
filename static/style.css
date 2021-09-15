@@ -34,38 +34,23 @@ li {
     display: flex;
     height: 60px;
 }
-.book {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #8CACFA;
-    height: 70px;
-    margin: auto;
-    justify-content: space-between;
-}
-.seller {
-    width: 1170px;
-    margin: auto;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    justify-content: space-between;
-}
-.sellerChild :nth-child(2){
-    margin-left: 10px;
-    
-}
+
 .favorite{
     font-size: 16px;
     color: white;
 }
-.list{
-    width: 100%;
+
+
+
+
+
+
+/* .inner{
+    width: 1000px;
     display: flex;
     align-items: center;
     background-color:yellowgreen;
+    display: none;
 }
 .list-seller{
     width: 1170px;
@@ -84,10 +69,10 @@ li {
     font-size: 15px;
     color: white;
     margin: 0;
-}
-.best-seller1 {
-    margin-right: 25px;
-}
+} */
+/*.best-seller1 {*/
+/*    margin-right: 25px;*/
+/*}*/
 
 .content2 {
     display: grid;
@@ -126,13 +111,13 @@ li {
     margin: auto;
 }
 
-.best-seller2 {
-    margin: auto 25px;
-}
+/*.best-seller2 {*/
+/*    margin: auto 25px;*/
+/*}*/
 
-.best-seller3 {
-    margin: auto 25px;
-}
+/*.best-seller3 {*/
+/*    margin: auto 25px;*/
+/*}*/
 
 
 .modal_button{
@@ -220,10 +205,15 @@ li {
     background:#fff;
     border-radius:10px;
     position:relative;
+<<<<<<< HEAD
     top:28%;
     left:38%;
     margin-top:-100px;
     margin-left:-100px;
+=======
+    top:20%;
+    margin:auto;
+>>>>>>> 3a7b27ae73884aebc4db3b566e24238a7debf435
     box-sizing:border-box;
     cursor:pointer;
     padding: 20px;
@@ -243,4 +233,48 @@ li {
 }
 .sign-btn {
     padding:20px;
+<<<<<<< HEAD
+=======
+}
+ul {
+    padding-inline-start: 0;
+}
+.bookParent{
+    width: 100%;
+    background-color: rgb(0, 112, 240);
+}
+.book {
+    color: white;
+    padding: 10px 0;
+    margin: auto;
+    width: 1170px;
+    display: flex;
+}
+.seller_box {
+    width: 1170px;
+    margin: auto;
+}
+.seller{
+    font-size: 20px;
+    margin-right: 50px;
+}
+.seller2 .div{
+    margin-left: 40px;
+}
+.bestChild {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.steadyChild, .bestChild{
+    display: none;
+}
+.seller1:hover .bestChild{
+    display: flex;
+    justify-content: space-between;    
+}
+.seller2:hover .steadyChild{
+    display: flex;
+    width: 100%;
+>>>>>>> 3a7b27ae73884aebc4db3b566e24238a7debf435
 }
