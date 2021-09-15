@@ -17,8 +17,11 @@ db = client.team22db
 #크롬창 열기 구글드라이브 다운받은 파일 있는곳으로 놔야함
 driver = webdriver.Chrome('C:/Users/thdgu/Desktop/chromedriver_win32/chromedriver.exe')
 
+#크롬창 열기
+driver = webdriver.Chrome('C:/users/HANSUNG/desktop/chromedriver.exe')
+
 #교보문고 베스트셀러 주간 사이트 접속하기
-url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf"
+url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf?range=1&kind=3&orderClick=DAC&mallGb=KOR&linkClass=A"
 driver.get(url)
 
 #1번째 페이지 클릭
@@ -32,6 +35,7 @@ for page in range(10):
     # 버튼 누르기
     try:
         page_buttons = driver.find_elements_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > *')
+
         page_buttons[page].click()
         time.sleep(2)
     except NoSuchElementException:
@@ -55,7 +59,9 @@ for page in range(10):
             "imgsrc" : imgsrc,
             "buy_link" : buy_link
         }
+
         # 아래 books에 원하는 폴더 이름 넣으면 신규로 생성됨.
         db.books.insert_one(doc)
+        db.yearly.insert_one(doc)
 
 driver.quit()
