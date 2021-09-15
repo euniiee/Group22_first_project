@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 import requests
 
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb+srv://team22:1234@cluster0.xfhpt.mongodb.net/cluster0?retryWrites=true&w=majority')
 db = client.team22db
 
 # <크롤링 필요 목록>
@@ -15,10 +15,10 @@ db = client.team22db
 # 구매 사이트
 
 #크롬창 열기
-driver = webdriver.Chrome('C:/Users/ksw04/OneDrive/바탕 화면/chromedriver.exe')
+driver = webdriver.Chrome('C:/users/HANSUNG/desktop/chromedriver.exe')
 
 #교보문고 베스트셀러 주간 사이트 접속하기
-url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf"
+url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf?range=1&kind=3&orderClick=DAC&mallGb=KOR&linkClass=A"
 driver.get(url)
 
 #1번째 페이지 클릭
@@ -32,6 +32,7 @@ for page in range(10):
     # 버튼 누르기
     try:
         page_buttons = driver.find_elements_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > *')
+
         page_buttons[page].click()
         time.sleep(2)
     except NoSuchElementException:
@@ -55,7 +56,7 @@ for page in range(10):
             "imgsrc" : imgsrc,
             "buy_link" : buy_link
         }
-        db.books.insert_one(doc)
+        db.yearly.insert_one(doc)
 
 driver.quit()
 
