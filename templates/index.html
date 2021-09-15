@@ -25,8 +25,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap"
           rel="stylesheet">
-    <script src="../static/main.js"></script>
-
+    <!-- <script src="../static/main.js"></script> -->
+    <script defer src="../static/main.js"></script>
     <title>Document</title>
 
 </head>
@@ -39,24 +39,25 @@
         </div>
     </div>
 </nav>
-<nav>
     <div class="book">
-        <div class="seller">
-            <div class="sellerChild"><a>베스트 셀러 </a><a> 스테디 셀러</a></div>
+        <div class="seller" id="best">
+            <div class="sellerChild">
+                <a>베스트 셀러 </a><a> 스테디 셀러</a>
+            </div>
         </div>
+        <nav class="list" id="list">
+            <div class="list-seller">
+                <span class="best-seller1">주간</span>
+                <span>|</span>
+                <span class="best-seller2">월간</span>
+                <span>|</span>
+                <span class="best-seller3">연간</span>
+                <span class="steady-seller">국내도서</span>
+            </div>
+        </nav>
+    </div>
 
-    </div>
-</nav>
-<nav class="list">
-    <div class="list-seller">
-        <span class="best-seller1">주간</span>
-        <span>|</span>
-        <span class="best-seller2">월간</span>
-        <span>|</span>
-        <span class="best-seller3">연간</span>
-        <span class="steady-seller">국내도서</span>
-    </div>
-</nav>
+
 <div class="content">
     <div class="content2">
         <div class="card">

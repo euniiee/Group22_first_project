@@ -37,9 +37,10 @@ li {
 .book {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: #8CACFA;
-    height: 70px;
+    height: auto;
     margin: auto;
     justify-content: space-between;
 }
@@ -64,8 +65,10 @@ li {
 .list{
     width: 100%;
     display: flex;
+    
     align-items: center;
     background-color:yellowgreen;
+    display: none;
 }
 .list-seller{
     width: 1170px;
@@ -289,11 +292,14 @@ li {
 }
 .log-sign {
     text-align: center;
-    pont-size: 30px
+    font-size: 30px;
 }
 .form-group {
     margin-top: 30px;
 }
 .sign-btn {
     padding:20px;
+}
+.book:hover .list{
+    display: block;
 }
