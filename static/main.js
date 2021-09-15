@@ -1,21 +1,26 @@
-$(function(){
-    $(".card-img-top").click(
-        function() {
-            $(".modal").fadeIn();
-        });
-    $(".modal_content").click(
-        function() {
-            $(".modal").fadeOut();
-        });
-    });
+// Get the modal login
+var modalLogin = document.getElementById('id01');
 
-$(function(){
-    $(".signup").click(
-        function() {
-            $(".join").fadeIn();
-        });
-    $(".modal_content2").click(
-        function() {
-            $(".join").fadeOut();
-        });
-    });
+window.onclick = function(event) {
+    if (event.target == modalLogin) {
+        modalLogin.style.display = "none";
+    }
+}
+
+// Get the modal join
+var modalJoin = document.getElementById('id02');
+
+window.onclick = function(event) {
+    if (event.target == modalJoin) {
+        modalJoin.style.display = "none";
+    }
+}
+
+// Get the modal img detail
+var modaImgDetail = document.getElementById('id03');
+
+window.onclick = function(event) {
+    if (event.target == modaImgDetail) {
+        modaImgDetail.style.display = "none";
+    }
+}
