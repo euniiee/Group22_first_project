@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 import requests
 
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb+srv://team22:1234@cluster0.xfhpt.mongodb.net/cluster0?retryWrites=true&w=majority')
 db = client.team22db
 
 # <크롤링 필요 목록>
@@ -14,8 +14,8 @@ db = client.team22db
 # 제목
 # 구매 사이트
 
-#크롬창 열기
-driver = webdriver.Chrome('C:/Users/ksw04/OneDrive/바탕 화면/chromedriver.exe')
+#크롬창 열기 구글드라이브 다운받은 파일 있는곳으로 놔야함
+driver = webdriver.Chrome('C:/Users/thdgu/Desktop/chromedriver_win32/chromedriver.exe')
 
 #교보문고 베스트셀러 주간 사이트 접속하기
 url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf"
@@ -55,8 +55,7 @@ for page in range(10):
             "imgsrc" : imgsrc,
             "buy_link" : buy_link
         }
+        # 아래 books에 원하는 폴더 이름 넣으면 신규로 생성됨.
         db.books.insert_one(doc)
 
 driver.quit()
-
-
