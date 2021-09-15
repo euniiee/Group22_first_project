@@ -4,7 +4,7 @@ from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb+srv://team22:1234@cluster0.xfhpt.mongodb.net/cluster0?retryWrites=true&w=majority')
+client = MongoClient('localhost', 27017)
 db = client.team22db
 
 
@@ -18,10 +18,16 @@ def home():
 # 홈페이지(베스트셀러 주간)
 @app.route('/api/weekly', methods=['GET'])
 def bestWeekly():
-    sample_receive = request.args.get('sample_give')
-    print(sample_receive)
-    return jsonify({'msg': 'list 연결되었습니다!'})
-#
+    weekly = list(db.weekly.find({}, {'_id': False}))
+    return jsonify({'week': weekly})
+
+
+# @app.route('/api/list', methods=['GET'])
+# def show_stars():
+#     movie_star = list(db.weekly.find({}, {'_id': False}).sort('like', -1))
+#     return jsonify({'week': movie_star})
+
+
 # @app.route('/api/monthly', methods=['GET'])
 # def show_stars():
 #     sample_receive = request.args.get('sample_give')

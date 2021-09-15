@@ -86,8 +86,7 @@ li {
 
 .card {
     width: 300px;
-    height: 470px;
-    margin: auto auto auto 20px;
+    margin-bottom: 20px;
 }
 
 .card-img-top {
@@ -332,4 +331,60 @@ ul {
         display: block;
         float: none;
     }
+
+}
+
+ul {
+    padding-inline-start: 0;
+}
+.bookParent{
+    width: 100%;
+    background-color: rgb(0, 112, 240);
+}
+.book {
+    color: white;
+    padding: 10px 0;
+    margin: auto;
+    width: 1170px;
+    display: flex;
+}
+.seller_box {
+    width: 1170px;
+    margin: auto;
+}
+.seller{
+    font-size: 20px;
+    margin-right: 50px;
+}
+.seller2 .div{
+    margin-left: 40px;
+}
+.bestChild {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.steadyChild, .bestChild{
+    display: none;
+}
+.seller1:hover .bestChild{
+    display: flex;
+    justify-content: space-between;    
+}
+.seller2:hover .steadyChild{
+    display: flex;
+    width: 100%;
+}
+
+.card-title {
+    font-size: 18px;
+}
+.author {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
 }  /* 모달 로그인.회원가입 - 송현 */
+

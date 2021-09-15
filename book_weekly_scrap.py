@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 import requests
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://team22:1234@cluster0.xfhpt.mongodb.net/cluster0?retryWrites=true&w=majority')
+client = MongoClient('localhost', 27017)
 db = client.team22db
 
 # <크롤링 필요 목록>
@@ -22,7 +22,7 @@ db = client.team22db
 driver = webdriver.Chrome('C:/users/HANSUNG/desktop/chromedriver.exe')
 
 #교보문고 베스트셀러 주간 사이트 접속하기
-url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf?range=1&kind=3&orderClick=DAC&mallGb=KOR&linkClass=A"
+url = "http://www.kyobobook.co.kr/bestSellerNew/steadyseller.laf?mallGb=KOR&orderClick=DDa"
 driver.get(url)
 
 #1번째 페이지 클릭
@@ -52,17 +52,18 @@ for page in range(10):
         title = i.select_one('div.cover > a > img')['alt']
         imgsrc = i.select_one('div.cover > a > img')['src']
         buy_link = i.select_one('div.detail > div.title > a')['href']
-        print(title, imgsrc, buy_link)
+        author = i.select_one('div.detail > div.author').text.strip().split('\n')[0]
+        print(title, imgsrc, buy_link, author)
 
         #db에 저장
         doc = {
             "title" : title,
             "imgsrc" : imgsrc,
-            "buy_link" : buy_link
-        }
-
-        # 아래 books에 원하는 폴더 이름 넣으면 신규로 생성됨.
-        db.books.insert_one(doc)
-        db.yearly.insert_one(doc)
+            "buy_link" : buy_link,
+            "author" : author
+            }
+        db.steady.insert_one(doc)
 
 driver.quit()
+
+
