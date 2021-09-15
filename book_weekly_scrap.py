@@ -2,6 +2,12 @@ import time
 from bs4 import BeautifulSoup
 #selenium 임포트
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+import requests
+
+from pymongo import MongoClient
+client = MongoClient('localhost', 27017)
+db = client.team22db
 
 # <크롤링 필요 목록>
 # 이미지
@@ -18,10 +24,18 @@ driver.get(url)
 #1번째 페이지 클릭
 first_page = driver.find_element_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > li:nth-child(1)')
 first_page.click()
+time.sleep(3)
 
 #여러 페이지에서 반복하기
-for page in range(1, 11):
-    time.sleep(3)
+for page in range(10):
+    time.sleep(2)
+    # 버튼 누르기
+    try:
+        page_buttons = driver.find_elements_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > *')
+        page_buttons[page].click()
+        time.sleep(2)
+    except NoSuchElementException:
+        break
 
     #html 소스 크롤링
     req = driver.page_source
@@ -30,18 +44,18 @@ for page in range(1, 11):
     #제목, 이미지url 추출
     books_weekly = soup.select('#main_contents > ul > li')
     for i in books_weekly:
-        titles = i.select_one('div.cover > a > img')['alt']
-        imgsrcs = i.select_one('div.cover > a > img')['src']
+        title = i.select_one('div.cover > a > img')['alt']
+        imgsrc = i.select_one('div.cover > a > img')['src']
         buy_link = i.select_one('div.detail > div.title > a')['href']
-        print(titles, imgsrcs, buy_link)
+        print(title, imgsrc, buy_link)
 
-    if page==10:
-        break
-
-    #버튼 누르기
-    page_buttons = driver.find_elements_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > *')
-    page_buttons[page].click()
-    time.sleep(2)
+        #db에 저장
+        doc = {
+            "title" : title,
+            "imgsrc" : imgsrc,
+            "buy_link" : buy_link
+        }
+        db.books.insert_one(doc)
 
 driver.quit()
 
