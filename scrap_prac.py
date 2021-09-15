@@ -1,61 +1,120 @@
-import time
-from bs4 import BeautifulSoup
-#selenium 임포트
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-import requests
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>마이 페이보릿 무비스타 | 프론트-백엔드 연결 마지막 예제!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <style>
+            .center {
+                text-align: center;
+            }
 
-from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
-db = client.team22db
+            .star-list {
+                width: 500px;
+                margin: 20px auto 0 auto;
+            }
 
-# <크롤링 필요 목록>
-# 이미지
-# 제목
-# 구매 사이트
+            .star-name {
+                display: inline-block;
+            }
 
-#크롬창 열기
-driver = webdriver.Chrome('C:/Users/ksw04/OneDrive/바탕 화면/chromedriver.exe')
+            .star-name:hover {
+                text-decoration: underline;
+            }
 
-#교보문고 베스트셀러 주간 사이트 접속하기
-url = "https://www.kyobobook.co.kr/bestSellerNew/bestseller.laf"
-driver.get(url)
+            .card {
+                margin-bottom: 15px;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                showStar();
+            });
 
-#1번째 페이지 클릭
-first_page = driver.find_element_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > li:nth-child(1)')
-first_page.click()
-time.sleep(3)
+            function showStar() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/list?sample_give=샘플데이터',
+                    data: {},
+                    success: function (response) {
+                        alert(response['msg']);
+                    }
+                });
+            }
 
-#여러 페이지에서 반복하기
-for page in range(10):
-    # 버튼 누르기
-    try:
-        page_buttons = driver.find_elements_by_css_selector('#main_contents > div:nth-child(6) > div.list_paging > ul > *')
-        page_buttons[page].click()
-        time.sleep(2)
-    except NoSuchElementException:
-        break
+            function likeStar(name) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/like',
+                    data: {sample_give:'샘플데이터'},
+                    success: function (response) {
+                        alert(response['msg']);
+                    }
+                });
+            }
 
-    #html 소스 크롤링
-    req = driver.page_source
-    soup = BeautifulSoup(req, 'html.parser')
+            function deleteStar(name) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/delete',
+                    data: {sample_give:'샘플데이터'},
+                    success: function (response) {
+                        alert(response['msg']);
+                    }
+                });
+            }
 
-    #제목, 이미지url 추출
-    books_weekly = soup.select('#main_contents > ul > li')
-    for i in books_weekly:
-        title = i.select_one('div.cover > a > img')['alt']
-        imgsrc = i.select_one('div.cover > a > img')['src']
-        buy_link = i.select_one('div.detail > div.title > a')['href']
-        print(title, imgsrc, buy_link)
-
-        #db에 저장
-        doc = {
-            "title" : title,
-            "imgsrc" : imgsrc,
-            "buy_link" : buy_link
-        }
-        db.books.insert_one(doc)
-
-driver.quit()
-
-
+        </script>
+    </head>
+    <body>
+        <section class="hero is-warning">
+            <div class="hero-body">
+                <div class="container center">
+                    <h1 class="title">
+                        마이 페이보릿 무비스타😆
+                    </h1>
+                    <h2 class="subtitle">
+                        순위를 매겨봅시다
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <div class="star-list" id="star-box">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img
+                                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fssl.pstatic.net%2Fsstatic%2Fpeople%2Fportrait%2F201807%2F20180731143610623-6213324.jpg&type=u120_150&quality=95"
+                                        alt="Placeholder image"
+                                />
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <a href="#" target="_blank" class="star-name title is-4">김다미 (좋아요: 3)</a>
+                            <p class="subtitle is-6">안녕, 나의 소울메이트(가제)</p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" onclick="likeStar('김다미')" class="card-footer-item has-text-info">
+                        위로!
+                        <span class="icon">
+              <i class="fas fa-thumbs-up"></i>
+            </span>
+                    </a>
+                    <a href="#" onclick="deleteStar('김다미')" class="card-footer-item has-text-danger">
+                        삭제
+                        <span class="icon">
+              <i class="fas fa-ban"></i>
+            </span>
+                    </a>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
