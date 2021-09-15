@@ -27,13 +27,13 @@ for page in range(1, 11):
     req = driver.page_source
     soup = BeautifulSoup(req, 'html.parser')
 
-    #바로가기 페이지 url 스크래핑
+    #제목, 이미지url 추출
     books_weekly = soup.select('#main_contents > ul > li')
-    for b in books_weekly:
-        buy_page = b.select_one('div.detail > div.title > a')['href']
-        print(buy_page)
-
-    # main_contents > ul > li:nth-child(6) > div.detail > div.title > a
+    for i in books_weekly:
+        titles = i.select_one('div.cover > a > img')['alt']
+        imgsrcs = i.select_one('div.cover > a > img')['src']
+        buy_link = i.select_one('div.detail > div.title > a')['href']
+        print(titles, imgsrcs, buy_link)
 
     if page==10:
         break
