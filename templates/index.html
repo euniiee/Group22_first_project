@@ -28,6 +28,28 @@
     <!-- <script src="../static/main.js"></script> -->
     <script defer src="../static/main.js"></script>
     <title>Document</title>
+    <!-- <style>
+    .test-bg{
+    background-color: aqua;
+    }
+    .book-ul, .book-ul2{
+        width:900px;
+        margin:0 auto;
+    }
+    .book-ul li{
+        display: inline;
+    }
+    .test2-bg{
+        /* display: none; */
+        background-color: blueviolet;
+    }
+    .book-ul2 li{
+        display: inline;
+    }
+    .test-bg:hover + .test2-bg {
+        display: block;
+    }
+    </style> -->
 
 </head>
 <body>
@@ -39,23 +61,38 @@
         </div>
     </div>
 </nav>
-    <div class="book">
-        <div class="seller" id="best">
-            <div class="sellerChild">
-                <a>베스트 셀러 </a><a> 스테디 셀러</a>
-            </div>
+
+<div class="bookParent">
+<ul class="book">
+    <li class="seller1">
+        <div class="seller"><a>베스트 셀러</a></div>
+        <ul class="bestChild">
+            <li><a>주간</a></li>
+            <li><a>월간</a></li>
+            <li><a>연간</a></li>
+        </ul>
+    </li>
+    <li class="seller2"> 
+        <div class="seller"><a>스테디 셀러</a></div>
+            <ul class = "steadyChild">
+            <li><a>국내도서</a></li>
         </div>
-        <nav class="list" id="list">
-            <div class="list-seller">
-                <span class="best-seller1">주간</span>
-                <span>|</span>
-                <span class="best-seller2">월간</span>
-                <span>|</span>
-                <span class="best-seller3">연간</span>
-                <span class="steady-seller">국내도서</span>
-            </div>
-        </nav>
-    </div>
+    </li>   
+</ul>
+</div>
+<!-- <div class="test-bg">
+    <ul class="book-ul">
+        <li>베스트셀러</li>
+        <li>스테디셀러</li>
+    </ul>
+</div>
+<div class="test2-bg">
+    <ul class="book-ul2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div> -->
 
 
 <div class="content">
