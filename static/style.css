@@ -91,8 +91,7 @@ li {
 
 .card {
     width: 300px;
-    height: 470px;
-    margin: auto auto auto 20px;
+    margin-bottom: 20px;
 }
 
 .card-img-top {
@@ -582,4 +581,14 @@ ul {
 .seller2:hover .steadyChild{
     display: flex;
     width: 100%;
+}
+
+.card-title {
+    font-size: 18px;
+}
+.author {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 13px;
 }
