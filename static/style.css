@@ -385,6 +385,9 @@ ul {
     margin-bottom: 20px;
     font-size: 13px;
 }
-
-}  /* 모달 로그인.회원가입 - 송현 */
+.overlap {
+    position: absolute !important;
+    width: 30% !important;
+    right: 35px !important;
+}
 
