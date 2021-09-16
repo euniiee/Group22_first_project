@@ -22,17 +22,21 @@ def bestWeekly():
     return jsonify({'week': weekly})
 
 
-# @app.route('/api/list', methods=['GET'])
-# def show_stars():
-#     movie_star = list(db.weekly.find({}, {'_id': False}).sort('like', -1))
-#     return jsonify({'week': movie_star})
+@app.route('/api/monthly', methods=['GET'])
+def bestmonthly():
+    monthly = list(db.monthly.find({}, {'_id': False}))
+    return jsonify({'month': monthly})
+
+@app.route('/api/yearly', methods=['GET'])
+def bestyearly():
+    yearly = list(db.yearly.find({}, {'_id': False}))
+    return jsonify({'year': yearly})
 
 
-# @app.route('/api/monthly', methods=['GET'])
-# def show_stars():
-#     sample_receive = request.args.get('sample_give')
-#     print(sample_receive)
-#     return jsonify({'msg': 'list 연결되었습니다!'})
+@app.route('/api/steady', methods=['GET'])
+def steady():
+    steady = list(db.steady.find({}, {'_id': False}))
+    return jsonify({'steady': steady})
 #
 # @app.route('/api/yearly', methods=['GET'])
 # def show_stars():

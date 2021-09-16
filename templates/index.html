@@ -44,20 +44,20 @@
     <li class="seller1">
         <div class="seller"><a>베스트 셀러</a></div>
         <ul class="bestChild">
-            <li><a>주간</a></li>
-            <li><a>월간</a></li>
-            <li><a>연간</a></li>
+            <li><a onclick="bestWeekly()">주간</a></li>
+            <li><a onclick="bestmonthly()">월간</a></li>
+            <li><a onclick="bestyearly()">연간</a></li>
         </ul>
     </li>
     <li class="seller2"> 
-        <div class="seller"><a>스테디 셀러</a></div>
+        <div class="seller"><a onclick="steady()">스테디 셀러</a></div>
             <ul class = "steadyChild">
-                <li><a>국내도서</a></li>
+                <li><a onclick="steady()">국내도서</a></li>
             </ul>
     </li>
 </ul>
 </div>
-<div class="content">
+<div class="content" id="home">
     <div class="content2" id='main'>
 
     <!-- 상세이미지 클릭시 모달 -->
